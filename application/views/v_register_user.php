@@ -7,6 +7,7 @@
         <link href="<?php echo base_url();?>asset/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url();?>asset/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>asset/css/datepicker.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>asset/css/datepicker/datepicker3.css" />
         <link href="<?php echo base_url();?>asset/css/AdminLTE.css" rel="stylesheet" type="text/css" />
         
     </head>
@@ -32,7 +33,7 @@
                         </div>
                         <div class="form-group">
                             <label>Tanggal Lahir</label>
-                            <input type="date" name="birth_day" class="form_input datepicker small-form" placeholder="dd/mm/yyyy"/>
+                            <input type="date" name="birth_day" id="tgl_lahir" class="form_input datepicker" placeholder="dd/mm/yyyy"/>
                         </div>
                         <div class="form-group">
                             <input type="password" name="pass_user" class="form-control" placeholder="Password"/>
@@ -60,9 +61,10 @@
 
         <script src="<?php echo base_url();?>asset/js/jquery.min.js"></script>
         <script src="<?php echo base_url();?>asset/js/bootstrap.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src= "<?php echo base_url();?>asset/css/bootstrap-datepicker.js"></script> 
-        <script type="text/javascript" src= "<?php echo base_url();?>asset/css/bootstrap-datetimepicker.js"></script>
-        <script type="text/javascript" src= "<?php echo base_url();?>asset/css/bootstrap-datetimepicker.min.js"></script> 
+        <script type="text/javascript" src= "<?php echo base_url();?>asset/js/bootstrap-datepicker.js"></script> 
+        <script type="text/javascript" src= "<?php echo base_url();?>asset/js/bootstrap-datetimepicker.js"></script>
+        <script type="text/javascript" src= "<?php echo base_url();?>asset/js/bootstrap-datetimepicker.min.js"></script> 
+        <script type="text/javascript" src= "<?php echo base_url();?>asset/js/costum.js"></script> 
 
     </body>
 </html>

@@ -49,9 +49,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-//$db['default']['hostname'] = 'Any Host';
-$db['default']['username'] = 'mloppcom_ruude';
-$db['default']['password'] = ',Q6h5^]q%%fG';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
 $db['default']['database'] = 'mloppcom_ebook';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

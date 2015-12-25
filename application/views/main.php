@@ -16,7 +16,9 @@
         <script src="<?php echo base_url();?>asset/js/plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
         <script type="text/javascript">
             $(function() {
-                $("#example1").dataTable();
+                $("#example1").dataTable({
+                    "sDom": '<"row view-filter"<"col-lg-8"<"pull-left"l><"pull-right"f><"clearfix">>>t<"row view-pager"<"col-sm-12"<"text-center"ip>>>'
+                });
             });
         </script>
         <!-- AdminLTE App -->
@@ -61,7 +63,7 @@
         <header class="header">
             <a href="<?php echo base_url();?>main" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                App Your Ebook
+                Mona Core
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">

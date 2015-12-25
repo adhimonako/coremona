@@ -7,7 +7,7 @@ class M_user extends CI_Model
 	public function checkUserById($idUser) 
 	{
 		$this->db->select("*")->from('user');
-		$this->db->where('ID_User', $idUser);
+		$this->db->where('user_id', $idUser);
 		$query = $this->db->get();
 		return $query->row();
 	}
@@ -19,7 +19,19 @@ class M_user extends CI_Model
 		$query = $this->db->get();
 		return $query->result_array(); 
 	}
+        
+	public function get_single_user($idUser) //buat manage user
+	{
+		$this->db->select("*")->from('user');
+		//pengecekan id
+		if (empty($idUser)) {
+			return false;
+		}
+		$this->db->where('user_id', (int) $idUser);
 
+		$query = $this->db->get();
+		return $query->result_array();
+	}
 	//buat manage delete user
 	public function delete($id)
 	{

@@ -24,7 +24,7 @@ class M_register extends CI_Model
 
 	public function get_login($val, $single=FALSE) // buat cek login di web
 	{
-		$this->db->select("*")->from('user');
+		$this->db->select("*")->from("user");
 		$this->db->where($val);
 		if ($single == true) {
 			$this->db->limit(1);
@@ -44,7 +44,7 @@ class M_register extends CI_Model
 		if (empty($idUser)) {
 			return false;
 		}
-		$this->db->where('ID_User', (int) $idUser);
+		$this->db->where('user_id', (int) $idUser);
 
 		$query = $this->db->get();
 		return $query->result_array();

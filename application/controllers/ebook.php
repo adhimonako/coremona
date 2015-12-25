@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Ebook extends CI_Controller 
+class Ebook extends MY_Controller 
 {
 	protected function require_login(){
 		if($this->session->userdata("nm_user") == "")

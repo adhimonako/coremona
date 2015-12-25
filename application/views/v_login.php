@@ -23,6 +23,7 @@
             <form method="post" action="<?php echo base_url(); ?>login">
                 <div class="body bg-gray">
                 <?php echo validation_errors();?>
+                    <?php echo $this->session->userdata('is_login'); ?>
                     <div class="form-group">
                         <input type="text" name="nm_user" class="form-control" placeholder="Username"/>
                     </div>
