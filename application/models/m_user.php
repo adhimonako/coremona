@@ -35,8 +35,19 @@ class M_user extends CI_Model
 	//buat manage delete user
 	public function delete($id)
 	{
-		$this->db->where('ID_User', $id);
+		$this->db->where('user_id', $id);
 		$this->db->delete('user');
 	}
-}
+        
+	public function save($data, $id=FALSE) 
+	{
+		if ($id == FALSE) {
+			$this->db->set($data)->insert('user');
+			return $this->db->insert_id();
+		} else { //update data
+			$this->db->where('user_id', $id);
+			$this->db->set($data);
+			$this->db->update('user');
+		}
+	}}
 

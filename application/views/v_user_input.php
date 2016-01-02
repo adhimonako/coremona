@@ -1,66 +1,43 @@
-<?php 
-    if($this->session->userdata("nm_user") == "")
-    {
-        redirect ("login","refresh");
-    }
- ?>
 <div class="box box-succesful">
     <div class="box-header">
-        <h3 class="box-title">Form Upload Ebook</h3>
+        <h3 class="box-title">Input User</h3>
     </div><!-- /.box-header -->
     <div class="box-body">
-    <?php echo validation_errors();?>
-        <form role="form" method="post" action="<?php echo base_url();?>ebook/input_ebook" enctype="multipart/form-data">
+        <?php echo validation_errors();?>
+        <form role="form" method="post" action="<?php echo base_url();?>user/input_user">
             <!-- text input -->
             <div class="form-group">
-                <label>Judul Ebook</label>
-                <input type="text" name="jdl_ebook" class="form-control" placeholder="Judul Ebook" />
+                <label>Nama User</label>
+                <input type="text" name="nama_user" class="form-control"  />
             </div>
             <div class="form-group">
-                <label>Deskripsi Ebook</label>
-                <textarea name="desk_ebook" class="form-control" rows="5" placeholder="Deskripsi Singkat Ebook"></textarea>
+                <label>Email User</label>
+                <input type="email" name="email_user" class="form-control" />
             </div>
             <div class="form-group">
-                <label>Jumlah Halaman Ebook</label>
-                <input type="text" name="jml_hal_ebook" class="form-control" placeholder="Jumlah Halaman Ebook" />
+                <label>Username</label>
+                <input type="text" name="nm_user" class="form-control" />
             </div>
             <div class="form-group">
-                <label>Penulis</label>
-                <input type="text" name="penulis_ebook" class="form-control" placeholder="Penulis Ebook" />
-            </div>
-            <div class="form-group">
-                <label>Tahun Terbit</label>
-                <input type="text" name="thn_terbit_ebook" class="form-control" placeholder="Tahun Terbit Ebook" />
-            </div>
-            <div class="form-group">
-                <label>Kategori Ebook</label>
-                <select name="kategori_ebook">
-                    <option>Komedi </option>
-                    <option>Sejarah</option>
-                    <option>Pendidikan</option>
-                    <option>Biografi</option>
-                    <option>Anak-anak</option>
-                    <option>Bisnis & Keuangan</option>
-                    <option>Lainnya</option>
+                <label>Role</label>
+                <select name="role_id" class="form-control">
+                    <option value="1">Super User</option>
+                    <option value="2">Admin</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label>Harga Ebook</label>
-                <input type="text" name="harga_ebook" class="form-control" placeholder="Harga Ebook Dalam Rupiah" />
+             <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="pass_user" class="form-control" placeholder="Password" />
             </div>
-            <div class="form-group">
-            <label >Upload Ebook</label>
-               <input type="file" name="upload_ebook" accept="application/pdf" id="upload_ebook">
-            </div>
-            <div class="form-group">
-            <label >Upload Image Ebook</label>
-               <input type="file" name="upload_image_ebook" id="upload_image_ebook">
-            </div>
-                <input type="hidden" name="id_ebook" class="form-control" />
+             <div class="form-group">
+                <label>Confrim Password</label>
+                <input type="password" name="pass_confrim" class="form-control" placeholder="Confrim Password" />
+            </div>       
+            <input type="hidden" name="id_user" class="form-control" />
             <div class="box-footer">
-                <button type="submit" class="btn btn-primary" >Simpan</button>
+                <button type="reset" class="btn btn-danger">Reset</button>
+                <button type="submit" class="btn btn-success">Simpan</button>
             </div>
-        </form>
+         </form>
     </div><!-- /.box-body -->
-</div><!-- /.boxs -->
-<!-- lala -->
+</div><!-- /.box -->

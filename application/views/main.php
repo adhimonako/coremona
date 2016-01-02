@@ -90,8 +90,11 @@
                                 <!-- User image -->
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-                                     <div class="pull-right">
+                                    <div class="pull-right">
                                         <a href="<?php echo site_url("login/logout"); ?>" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                    <div class="pull-left">
+                                        <a href="<?php echo site_url("user/manage_profil"); ?>" class="btn btn-default btn-flat">Manage Profil</a>
                                     </div>
                                 </li>
                             </ul>
@@ -110,69 +113,18 @@
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-                    <?php if ($this->session->userdata('nm_user') == 'admin') { ?>
                         <li class="active">
                             <a href="<?php echo base_url();?>main">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url();?>register/manage_profil">
-                                <i class="fa fa-th"></i> <span>Manage Profil</span> 
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo base_url();?>user/manage_user">
+                            <a href="<?php echo base_url();?>user">
                                 <i class="glyphicon glyphicon-user"></i>
                                 <span>Manage User</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                         </li>
-                        <li>
-                            <a href="<?php echo base_url();?>ebook/get_list_ebook_server">
-                                <i class="glyphicon glyphicon-book"></i> <span>View Ebook On Server</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo base_url();?>ebook/view_ebook_all">
-                                <i class="fa fa-cloud-download"></i> <span>Download Ebook</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                        </li>
-                        <?php } else if ($this->session->userdata('nm_user') != 'admin') { ?>
-                        <li class="active">
-                            <a href="<?php echo base_url();?>main">
-                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo base_url();?>register/manage_profil">
-                                <i class="fa fa-th"></i> <span>Manage Profil</span> 
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo base_url();?>ebook/input_ebook">
-                                <i class="fa fa-book"></i>
-                                <span>Upload Ebook</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo base_url();?>ebook/view_ebook">
-                                <i class="glyphicon glyphicon-book"></i> <span>View Ebook</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo base_url();?>ebook/view_ebook_all">
-                                <i class="fa fa-cloud-download"></i> <span>Download Ebook</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                        </li>
-                        <?php  } ?>    
                     </ul>
                 </section>
                 <!-- /.sidebar -->

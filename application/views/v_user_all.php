@@ -12,15 +12,15 @@
             </div><!-- /.box-header -->
             <div class="box-body table-responsive">
                 <div class="col-lg-2 pull-right">
-                    <button class="btn btn-success pull-right"><i class="fa fa-plus-circle"></i>Add</button>
+                    <a href="<?php echo base_url().'user/input_user';?>"><button class="btn btn-success pull-right"><i class="fa fa-plus-circle"></i>Add</button></a>
                 </div>
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Judul Ebook</th>
-                            <th>Deskripsi Ebook</th>
-                            <th>Deskripsi Ebook</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Username</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -35,13 +35,12 @@
                     ?>
                         <tr>
                             <td><?php echo $no++?></td>
-                            <td><?php echo $row['Nama_User'];?></td>
-                            <td><?php echo $row['Status_User'];?></td>
-                            <td><?php echo $row['Email_User'];?></td>
+                            <td><?php echo $row['user_nama'];?></td>
+                            <td><?php echo $row['user_email'];?></td>
+                            <td><?php echo $row['user_username'];?></td>
                             <td>
-                                <span class="glyphicon glyphicon-trash" onclick="hapus_ebook(<?php echo $row['ID_User']?>)"></span>
-                                <a href="<?=base_url().'ebook/view?id='.$row['ID_User'];?>"><span class="glyphicon glyphicon-edit"></span></a>
-
+                                <a href="<?=base_url().'user/edit/'.$row['user_id'];?>"><span class="glyphicon glyphicon-edit"></span></a>
+                                <a href="javascript:void(0)"><span class="glyphicon glyphicon-trash" onclick="hapus_ebook(<?php echo $row['user_id']?>)"></span></a>
                             </td>
                         </tr>
                     <?php 
@@ -59,25 +58,11 @@
 <!-- AdminLTE App -->
 <script src="<?php echo base_url();?>asset/js/AdminLTE/app.js" type="text/javascript"></script>
 <script type="text/javascript">
-            $(function() 
-            {
-                $("#example1").dataTable();
-                $("#example2").dataTable
-                ({
-                    "bPaginate": true,
-                    "bLengthChange": true,
-                    "bFilter": true,
-                    "bSort": true,
-                    "bInfo": true,
-                    "bAutoWidth": true
-                });
-            });
-
             function hapus_ebook(id) 
             {
                 var r = confirm("Apakah Yakin menghapus? ");
                 if (r == true) {
-                    document.location.href = "<?php echo base_url();?>ebook/hapus/"+ id;
+                    document.location.href = "<?php echo base_url();?>user/hapus/"+ id;
                 }
             }
 
